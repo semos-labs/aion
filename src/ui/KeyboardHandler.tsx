@@ -77,7 +77,7 @@ export function KeyboardHandler() {
       
       {/* Toggle 3-day view - from registry */}
       {toggleColumnsKey && !hasOverlay && (
-        <Keybind keypress={toggleColumnsKey} onPress={() => toggleColumns()} />
+        <Keybind keypress={toggleColumnsKey} onPress={() => toggleColumns()} priority />
       )}
     </>
   );

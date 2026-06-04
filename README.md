@@ -26,6 +26,9 @@
   <a href="https://github.com/semos-labs/glyph"><img src="https://img.shields.io/badge/Built_with-Glyph-bd93f9" alt="Built with Glyph"></a>
 </p>
 
+> **Fork notice:** This is a maintained fork of [semos-labs/aion](https://github.com/semos-labs/aion) by [Nick Skriabin](https://github.com/nickskriabin). Original work is MIT licensed and attributed accordingly. Maintained by [Brandon Pollack](https://github.com/brandonpollack23).
+> I have used claude extensively and it is totally vibed i dont have time to actually read the soruce, I just wanted some of my own features, use at your own risk.
+
 ---
 
 ## Table of Contents
@@ -55,23 +58,23 @@ Most calendar apps are mouse-driven, slow, and cluttered. Aion takes a different
 
 ### Comparison
 
-| Feature | Aion | [calcurse](https://calcurse.org/) | [khal](https://github.com/pimutils/khal) | [gcalcli](https://github.com/insanum/gcalcli) | [calcure](https://github.com/anufrievroman/calcure) |
-|---------|:----:|:--------:|:----:|:-------:|:-------:|
-| **TUI (visual interface)** | ✅ | ✅ | ❌ | ❌ | ✅ |
-| **Google Calendar sync** | ✅ Native | ❌ | 🔧 vdirsyncer | ✅ Native | ❌ |
-| **CalDAV support** | ✅ Native | ❌ | 🔧 vdirsyncer | ❌ | ❌ |
-| **Multi-account** | ✅ | ❌ | 🔧 | ✅ | ❌ |
-| **Vim keybindings** | ✅ | Partial | ❌ | ❌ | Partial |
-| **Multi-day view** | ✅ 1/3/5 cols | ❌ | ❌ | ❌ | ❌ |
-| **Free/busy scheduling** | ✅ | ❌ | ❌ | ✅ | ❌ |
-| **Google Meet generation** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Natural language input** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Event search** | ✅ | ✅ | ✅ | ✅ | ❌ |
-| **Recurring events** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Timezone support** | ✅ | ✅ | ✅ | ✅ | ❌ |
-| **Theming** | ✅ TOML | ✅ | ✅ | ❌ | ✅ |
-| **Offline mode** | ✅ SQLite | ✅ | ✅ | ❌ | ✅ |
-| **Dependencies** | None | ncurses | Python | Python | Python |
+| Feature                    |     Aion      | [calcurse](https://calcurse.org/) | [khal](https://github.com/pimutils/khal) | [gcalcli](https://github.com/insanum/gcalcli) | [calcure](https://github.com/anufrievroman/calcure) |
+| -------------------------- | :-----------: | :-------------------------------: | :--------------------------------------: | :-------------------------------------------: | :-------------------------------------------------: |
+| **TUI (visual interface)** |      ✅       |                ✅                 |                    ❌                    |                      ❌                       |                         ✅                          |
+| **Google Calendar sync**   |   ✅ Native   |                ❌                 |              🔧 vdirsyncer               |                   ✅ Native                   |                         ❌                          |
+| **CalDAV support**         |   ✅ Native   |                ❌                 |              🔧 vdirsyncer               |                      ❌                       |                         ❌                          |
+| **Multi-account**          |      ✅       |                ❌                 |                    🔧                    |                      ✅                       |                         ❌                          |
+| **Vim keybindings**        |      ✅       |              Partial              |                    ❌                    |                      ❌                       |                       Partial                       |
+| **Multi-day view**         | ✅ 1/3/5 cols |                ❌                 |                    ❌                    |                      ❌                       |                         ❌                          |
+| **Free/busy scheduling**   |      ✅       |                ❌                 |                    ❌                    |                      ✅                       |                         ❌                          |
+| **Google Meet generation** |      ✅       |                ❌                 |                    ❌                    |                      ❌                       |                         ❌                          |
+| **Natural language input** |      ✅       |                ❌                 |                    ❌                    |                      ❌                       |                         ❌                          |
+| **Event search**           |      ✅       |                ✅                 |                    ✅                    |                      ✅                       |                         ❌                          |
+| **Recurring events**       |      ✅       |                ✅                 |                    ✅                    |                      ✅                       |                         ✅                          |
+| **Timezone support**       |      ✅       |                ✅                 |                    ✅                    |                      ✅                       |                         ❌                          |
+| **Theming**                |    ✅ TOML    |                ✅                 |                    ✅                    |                      ❌                       |                         ✅                          |
+| **Offline mode**           |   ✅ SQLite   |                ✅                 |                    ✅                    |                      ❌                       |                         ✅                          |
+| **Dependencies**           |     None      |              ncurses              |                  Python                  |                    Python                     |                       Python                        |
 
 > 🔧 = Requires additional setup/tools
 
@@ -79,25 +82,25 @@ Most calendar apps are mouse-driven, slow, and cluttered. Aion takes a different
 
 ### Features
 
-| Feature | Description |
-|---------|-------------|
-| **⌨️ Vim Keybindings** | Navigate with `j`/`k`, `gg`/`G`, `h`/`l` — feels like home |
-| **📅 Visual Timeline** | Day view with 15-minute precision and overlap handling |
-| **🔗 Google Calendar Sync** | Multi-account OAuth with PKCE, background sync every 30s |
-| **🗓️ CalDAV Support** | iCloud, Fastmail, Nextcloud, Radicale, and any CalDAV server |
-| **👥 Meet With** | Find free slots across multiple people's calendars |
-| **📹 Google Meet** | Auto-generate Meet links when creating events |
-| **📁 Multi-Calendar** | Toggle calendars on/off, each with its own color |
-| **🌍 Timezone Support** | Events display in local time, toggle to see original timezone |
-| **🎨 Themeable** | Customize every color via TOML configuration |
-| **💾 Local-First** | SQLite database, your data stays yours |
-| **🔔 Notifications** | Track pending invites at a glance |
-| **📝 Command Palette** | Quick access to all actions with fuzzy search |
-| **🔍 Event Search** | Find events by title or description with `/` |
-| **🗓️ Natural Language Dates** | Type "tomorrow 3pm" or "next friday for 2 hours" |
-| **🔁 Recurring Events** | Create and edit events with daily/weekly/monthly/yearly recurrence |
-| **❓ Context Help** | Press `?` anywhere to see available keybindings |
-| **🚀 Fast** | Built with Bun and React — instant startup |
+| Feature                       | Description                                                        |
+| ----------------------------- | ------------------------------------------------------------------ |
+| **⌨️ Vim Keybindings**        | Navigate with `j`/`k`, `gg`/`G`, `h`/`l` — feels like home         |
+| **📅 Visual Timeline**        | Day view with 15-minute precision and overlap handling             |
+| **🔗 Google Calendar Sync**   | Multi-account OAuth with PKCE, background sync every 30s           |
+| **🗓️ CalDAV Support**         | iCloud, Fastmail, Nextcloud, Radicale, and any CalDAV server       |
+| **👥 Meet With**              | Find free slots across multiple people's calendars                 |
+| **📹 Google Meet**            | Auto-generate Meet links when creating events                      |
+| **📁 Multi-Calendar**         | Toggle calendars on/off, each with its own color                   |
+| **🌍 Timezone Support**       | Events display in local time, toggle to see original timezone      |
+| **🎨 Themeable**              | Customize every color via TOML configuration                       |
+| **💾 Local-First**            | SQLite database, your data stays yours                             |
+| **🔔 Notifications**          | Track pending invites and send native desktop alerts               |
+| **📝 Command Palette**        | Quick access to all actions with fuzzy search                      |
+| **🔍 Event Search**           | Find events by title or description with `/`                       |
+| **🗓️ Natural Language Dates** | Type "tomorrow 3pm" or "next friday for 2 hours"                   |
+| **🔁 Recurring Events**       | Create and edit events with daily/weekly/monthly/yearly recurrence |
+| **❓ Context Help**           | Press `?` anywhere to see available keybindings                    |
+| **🚀 Fast**                   | Built with Bun and React — instant startup                         |
 
 ---
 
@@ -114,12 +117,12 @@ brew install aion
 
 Download the latest release for your platform from the [Releases](https://github.com/semos-labs/aion/releases) page:
 
-| Platform | Binary |
-|----------|--------|
+| Platform              | Binary              |
+| --------------------- | ------------------- |
 | macOS (Apple Silicon) | `aion-darwin-arm64` |
-| macOS (Intel) | `aion-darwin-x64` |
-| Linux (x64) | `aion-linux-x64` |
-| Linux (ARM64) | `aion-linux-arm64` |
+| macOS (Intel)         | `aion-darwin-x64`   |
+| Linux (x64)           | `aion-linux-x64`    |
+| Linux (ARM64)         | `aion-linux-arm64`  |
 
 ```bash
 # Make executable (macOS/Linux)
@@ -242,65 +245,65 @@ Use `j`/`k` to move through events, `h`/`l` to switch panes, `Enter` to view det
 
 ### Navigation
 
-| Key | Action |
-|-----|--------|
-| `j` / `↓` | Move down / Next item |
-| `k` / `↑` | Move up / Previous item |
-| `h` / `←` | Previous day / column |
-| `l` / `→` | Next day / column |
-| `Tab` | Cycle focus between panes |
-| `` ` `` | Cycle focus (Calendars → Days → Timeline) |
-| `gg` | Jump to first item |
-| `G` | Jump to last item |
-| `n` | Jump to now (timeline only) |
-| `Ctrl+G` | Go to date (natural language) |
+| Key       | Action                                    |
+| --------- | ----------------------------------------- |
+| `j` / `↓` | Move down / Next item                     |
+| `k` / `↑` | Move up / Previous item                   |
+| `h` / `←` | Previous day / column                     |
+| `l` / `→` | Next day / column                         |
+| `Tab`     | Cycle focus between panes                 |
+| `` ` ``   | Cycle focus (Calendars → Days → Timeline) |
+| `gg`      | Jump to first item                        |
+| `G`       | Jump to last item                         |
+| `n`       | Jump to now (timeline only)               |
+| `Ctrl+G`  | Go to date (natural language)             |
 
 ### Events
 
-| Key | Action |
-|-----|--------|
-| `Enter` / `Space` | Open event details |
-| `e` | Edit event |
-| `D` | Delete event |
-| `Ctrl+N` | Create new event |
-| `Ctrl+M` | Meet with... (find free slots) |
+| Key               | Action                         |
+| ----------------- | ------------------------------ |
+| `Enter` / `Space` | Open event details             |
+| `e`               | Edit event                     |
+| `D`               | Delete event                   |
+| `Ctrl+N`          | Create new event               |
+| `Ctrl+M`          | Meet with... (find free slots) |
 
 ### Event Details
 
-| Key | Action |
-|-----|--------|
-| `y` | Accept invitation |
-| `n` | Decline invitation |
-| `m` | Maybe / Tentative |
+| Key | Action                                      |
+| --- | ------------------------------------------- |
+| `y` | Accept invitation                           |
+| `n` | Decline invitation                          |
+| `m` | Maybe / Tentative                           |
 | `o` | Open meeting link (Meet, Zoom, Teams, etc.) |
-| `e` | Edit event |
-| `D` | Delete event |
-| `t` | Toggle timezone (local ↔ original) |
+| `e` | Edit event                                  |
+| `D` | Delete event                                |
+| `t` | Toggle timezone (local ↔ original)          |
 
 ### Calendars & Accounts
 
-| Key | Action |
-|-----|--------|
-| `Shift+C` | Toggle calendars sidebar |
-| `A` | Toggle all-day events section |
+| Key       | Action                        |
+| --------- | ----------------------------- |
+| `Shift+C` | Toggle calendars sidebar      |
+| `A`       | Toggle all-day events section |
 
 ### View
 
-| Key | Action |
-|-----|--------|
-| `3` | Toggle between 1 and 3 column view |
+| Key     | Action                                    |
+| ------- | ----------------------------------------- |
+| `3`     | Toggle between 1 and 3 column view        |
 | `` ` `` | Cycle focus (Calendars → Days → Timeline) |
 
 ### General
 
-| Key | Action |
-|-----|--------|
-| `/` | Search events |
-| `:` | Open command palette |
-| `?` | Show help (context-aware) |
-| `N` | Open notifications |
-| `Esc` | Close overlay / Go back |
-| `q` | Quit |
+| Key   | Action                    |
+| ----- | ------------------------- |
+| `/`   | Search events             |
+| `:`   | Open command palette      |
+| `?`   | Show help (context-aware) |
+| `N`   | Open notifications        |
+| `Esc` | Close overlay / Go back   |
+| `q`   | Quit                      |
 
 ---
 
@@ -310,57 +313,57 @@ Open the command palette with `:` and type a command:
 
 ### Event Management
 
-| Command | Action |
-|---------|--------|
-| `new` | Create new event |
+| Command       | Action                  |
+| ------------- | ----------------------- |
+| `new`         | Create new event        |
 | `new <title>` | Create event with title |
-| `edit` | Edit selected event |
-| `delete` | Delete selected event |
+| `edit`        | Edit selected event     |
+| `delete`      | Delete selected event   |
 
 ### Navigation
 
-| Command | Action |
-|---------|--------|
+| Command       | Action                                                |
+| ------------- | ----------------------------------------------------- |
 | `goto <date>` | Jump to date (e.g., `goto tomorrow`, `goto march 15`) |
-| `now` | Jump to current time |
-| `today` | Jump to today |
+| `now`         | Jump to current time                                  |
+| `today`       | Jump to today                                         |
 
 ### Accounts & Sync
 
-| Command | Action |
-|---------|--------|
-| `login` | Add Google account (OAuth) |
-| `caldav` | Add CalDAV account |
-| `logout` | Remove all accounts |
-| `sync` | Force sync all calendars |
-| `accounts` | Manage connected accounts |
-| `calendars` | Toggle calendars sidebar |
+| Command     | Action                     |
+| ----------- | -------------------------- |
+| `login`     | Add Google account (OAuth) |
+| `caldav`    | Add CalDAV account         |
+| `logout`    | Remove all accounts        |
+| `sync`      | Force sync all calendars   |
+| `accounts`  | Manage connected accounts  |
+| `calendars` | Toggle calendars sidebar   |
 
 ### Scheduling
 
-| Command | Action |
-|---------|--------|
-| `meet` | Find free slots with other people |
+| Command | Action                            |
+| ------- | --------------------------------- |
+| `meet`  | Find free slots with other people |
 
 ### Search
 
-| Command | Action |
-|---------|--------|
+| Command  | Action                             |
+| -------- | ---------------------------------- |
 | `search` | Search events by title/description |
 
 ### View
 
-| Command | Action |
-|---------|--------|
+| Command       | Action                        |
+| ------------- | ----------------------------- |
 | `columns <n>` | Set column count (1, 3, or 5) |
 
 ### General
 
-| Command | Action |
-|---------|--------|
-| `help` | Show keybindings |
+| Command         | Action                   |
+| --------------- | ------------------------ |
+| `help`          | Show keybindings         |
 | `notifications` | Open notifications panel |
-| `quit` | Exit application |
+| `quit`          | Exit application         |
 
 Navigate with `↑`/`↓` or `Ctrl+P`/`Ctrl+N`, auto-fill with `Ctrl+Y`, select with `Enter`.
 
@@ -370,14 +373,14 @@ Navigate with `↑`/`↓` or `Ctrl+P`/`Ctrl+N`, auto-fill with `Ctrl+Y`, select 
 
 When creating or editing events, you can use natural language for dates and times:
 
-| Input | Result |
-|-------|--------|
-| `tomorrow 3pm` | Tomorrow at 3:00 PM |
-| `next friday at 10am` | Next Friday at 10:00 AM |
-| `in 2 hours` | 2 hours from now |
-| `today at 5pm for 30 minutes` | Today 5:00-5:30 PM |
-| `from march 5 for 2 weeks` | All-day event, March 5-19 |
-| `between march 6 and 12` | All-day event, March 6-12 |
+| Input                         | Result                    |
+| ----------------------------- | ------------------------- |
+| `tomorrow 3pm`                | Tomorrow at 3:00 PM       |
+| `next friday at 10am`         | Next Friday at 10:00 AM   |
+| `in 2 hours`                  | 2 hours from now          |
+| `today at 5pm for 30 minutes` | Today 5:00-5:30 PM        |
+| `from march 5 for 2 weeks`    | All-day event, March 5-19 |
+| `between march 6 and 12`      | All-day event, March 6-12 |
 
 ---
 
@@ -425,12 +428,12 @@ password = "app-password-here"
 
 #### Provider URLs
 
-| Provider | Server URL |
-|----------|-----------|
-| **iCloud** | `https://caldav.icloud.com` |
-| **Fastmail** | `https://caldav.fastmail.com/dav/calendars` |
-| **Nextcloud** | `https://your-server.com/remote.php/dav` |
-| **Radicale** | `https://your-server.com/radicale` |
+| Provider                | Server URL                                        |
+| ----------------------- | ------------------------------------------------- |
+| **iCloud**              | `https://caldav.icloud.com`                       |
+| **Fastmail**            | `https://caldav.fastmail.com/dav/calendars`       |
+| **Nextcloud**           | `https://your-server.com/remote.php/dav`          |
+| **Radicale**            | `https://your-server.com/radicale`                |
 | **Google** (via CalDAV) | `https://apidata.googleusercontent.com/caldav/v2` |
 
 > **Tip:** For iCloud, use an [app-specific password](https://support.apple.com/en-us/102654) — not your Apple ID password.
@@ -455,6 +458,21 @@ passwordCommand = "bw get password icloud-caldav"
 # Environment variable
 passwordCommand = "echo $CALDAV_PASSWORD"
 ```
+
+### Desktop Notifications
+
+Aion can send native desktop notifications for new pending invites and provider-defined event reminders. Reminder alerts use Google Calendar reminders and CalDAV `VALARM` data only; Aion does not invent a fallback reminder time.
+
+```toml
+[desktop-notifications]
+enabled = true
+invites = true
+event_reminders = true
+poll_seconds = 30
+terminal_bell_fallback = true
+```
+
+On Linux, native delivery depends on the notification tools available to `node-notifier`, such as `notify-send`/libnotify. If native delivery fails and `terminal_bell_fallback` is enabled, Aion emits a terminal bell.
 
 ### Theme
 
@@ -519,22 +537,25 @@ If `~/.aion/` exists, Aion uses it for backward compatibility. All files are sto
 New installations follow the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html):
 
 **Configuration** (`~/.config/aion/`):
-| File | Description |
-|------|-------------|
-| `config.toml` | User configuration (Google credentials, CalDAV accounts, theme) |
-| `contacts.json` | Optional manual contacts for name lookup |
+
+| File            | Description                                                     |
+| --------------- | --------------------------------------------------------------- |
+| `config.toml`   | User configuration (Google credentials, CalDAV accounts, theme) |
+| `contacts.json` | Optional manual contacts for name lookup                        |
 
 **Data** (`~/.local/share/aion/`):
-| File | Description |
-|------|-------------|
-| `aion.db` | SQLite database with all events |
-| `accounts.json` | OAuth tokens and account info |
-| `calendar-settings.json` | Calendar visibility preferences |
-| `account-settings.json` | Custom account names |
-| `sync-tokens.json` | Incremental sync tokens |
-| `logs/` | Application logs (daily rotation) |
+
+| File                     | Description                       |
+| ------------------------ | --------------------------------- |
+| `aion.db`                | SQLite database with all events   |
+| `accounts.json`          | OAuth tokens and account info     |
+| `calendar-settings.json` | Calendar visibility preferences   |
+| `account-settings.json`  | Custom account names              |
+| `sync-tokens.json`       | Incremental sync tokens           |
+| `logs/`                  | Application logs (daily rotation) |
 
 You can override XDG paths with environment variables:
+
 - `XDG_CONFIG_HOME` (default: `~/.config`)
 - `XDG_DATA_HOME` (default: `~/.local/share`)
 
@@ -542,16 +563,16 @@ You can override XDG paths with environment variables:
 
 ## Tech Stack
 
-| Component | Technology |
-|-----------|------------|
-| **Runtime** | [Bun](https://bun.sh) |
-| **UI Framework** | [Glyph](https://github.com/semos-labs/glyph) (React for terminals) |
-| **State Management** | [Jotai](https://jotai.org) |
-| **Database** | SQLite via [Drizzle ORM](https://orm.drizzle.team) |
-| **Date/Time** | [Luxon](https://moment.github.io/luxon) |
-| **NLP Dates** | [chrono-node](https://github.com/wanasit/chrono) |
-| **CalDAV** | [tsdav](https://github.com/natelindev/tsdav) + [ical.js](https://github.com/kewisch/ical.js) |
-| **Validation** | [Zod](https://zod.dev) |
+| Component            | Technology                                                                                   |
+| -------------------- | -------------------------------------------------------------------------------------------- |
+| **Runtime**          | [Bun](https://bun.sh)                                                                        |
+| **UI Framework**     | [Glyph](https://github.com/semos-labs/glyph) (React for terminals)                           |
+| **State Management** | [Jotai](https://jotai.org)                                                                   |
+| **Database**         | SQLite via [Drizzle ORM](https://orm.drizzle.team)                                           |
+| **Date/Time**        | [Luxon](https://moment.github.io/luxon)                                                      |
+| **NLP Dates**        | [chrono-node](https://github.com/wanasit/chrono)                                             |
+| **CalDAV**           | [tsdav](https://github.com/natelindev/tsdav) + [ical.js](https://github.com/kewisch/ical.js) |
+| **Validation**       | [Zod](https://zod.dev)                                                                       |
 
 ---
 
@@ -580,6 +601,7 @@ You can override XDG paths with environment variables:
 - [x] XDG Base Directory support
 - [x] CalDAV support (iCloud, Fastmail, Nextcloud, Radicale, etc.)
 - [x] `password_command` for secure credential storage
+- [x] Native desktop notifications for invites and provider reminders
 
 ### 🚧 In Progress
 
@@ -589,7 +611,6 @@ You can override XDG paths with environment variables:
 
 - [ ] Import/export (ICS)
 - [ ] Offline mode improvements
-- [ ] Custom notifications/reminders
 - [ ] Agenda view (list of upcoming events)
 - [ ] Event templates
 
