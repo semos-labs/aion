@@ -106,6 +106,8 @@ export function EventDialog() {
 
   // Calculate max dialog height (80% of screen)
   const maxDialogHeight = Math.floor(terminalHeight * 0.8);
+  const dialogHeight = Math.max(8, Math.min(maxDialogHeight, terminalHeight));
+  const formHeight = Math.max(1, dialogHeight - 2);
 
   const [summary, setSummary] = useState("");
   const [description, setDescription] = useState("");
@@ -424,7 +426,7 @@ export function EventDialog() {
           style={{
             width: DIALOG_WIDTH,
             maxWidth: DIALOG_WIDTH,
-            maxHeight: maxDialogHeight,
+            height: dialogHeight,
             flexDirection: "column",
             paddingX: 1,
             bg: theme.modal.background,
@@ -444,8 +446,8 @@ export function EventDialog() {
             </Box>
 
             {/* Form fields - scrollable */}
-            <ScrollView style={{ flexGrow: 1, flexShrink: 1 }}>
-              <Box style={{ flexDirection: "column", paddingY: 1, clip: true }}>
+            <Box style={{ height: formHeight }}>
+              <ScrollView style={{ height: "100%", paddingY: 1 }}>
                 {/* Title */}
                 <Box style={{ flexDirection: "row", gap: 1, clip: true }}>
                   <Text style={{ color: theme.text.dim, width: LABEL_WIDTH }}>title</Text>
@@ -809,8 +811,8 @@ export function EventDialog() {
                     </Box>
                   </>
                 )}
-              </Box>
-            </ScrollView>
+              </ScrollView>
+            </Box>
 
             {/* Footer */}
             <Box style={{ flexDirection: "row", gap: 1, justifyContent: "flex-end" }}>
